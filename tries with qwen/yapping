@@ -1,0 +1,29 @@
+Basically these are my tries with qwen , 
+
+my first work flow or algo which i thought of was :
+
+"use the ocr > create a list of texts / what the char said > send that list to vlm to assign characters a name and use the texts from the list to assign them to characters while ordering them right to left"
+ but this was obv too much for vlms and it also had a major problem regarding memory , the vlm would not remember characters from previous page
+
+So for that the next algo or flow which striked my mind was this:
+
+">>send the image to vlm asking it to create a list of unique characters and describing their looks and assign them a variable/name 
+>return all this in a list 
+> now using the ocr to read the texts and store them in a list 
+> send both of the lists and image to the vlm , askin it to assign these 2 together according to the image and return a dictionary"
+> sending the dictionary and image again to vlm or maybe use an llm and ask it to remove the voice effects
+> sending the new dictionary and asking it to arrange them in the reading order which is right to left
+> now pass 2nd page with the same discription list from previous text and send the 2nd page and ask it to add new distinct character in the list
+> use the ocr and repeat the process"
+
+idk if am able to express my thinking process in a good way or not but maybe i can explain better in person , idk
+but this also had so many flaws and the vlm js wouldnt work , it wasnt even able to decribe the looks of the chars 
+it was so annoying
+
+it also was not able to read right to left no matter what the prompt was
+so here's the 3rd workflow with qwen:
+This time i tried to play with coordinates
+">>i asked the vlm to assign coordinates to the texts 
+> created a function in python which would arrange the coordinates from top to bottom and right to left with sort , i think i have attached the file regarding that function also"
+
+there were also many other workflows and trial and errors but i think i already yapped a lot , i'll explain them if i get shortlisted for interview or even get to meet ya or talk with ya via words 
